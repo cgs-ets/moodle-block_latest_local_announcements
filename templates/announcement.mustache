@@ -54,7 +54,7 @@
             {{#iscreator}}
                 <div class="actions">
                     <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="actions-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</button>
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="actions-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{#ishome}}Actions{{/ishome}}{{^ishome}}<i class="fa fa-ellipsis-v" aria-hidden="true"></i>{{/ishome}}</button>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="actions-dropdown">
                             <a class="dropdown-item action-viewusers" href="#">Users</a>
                             <a class="dropdown-item action-edit" href="{{config.wwwroot}}/local/announcements/post.php?edit={{id}}">Edit</a>
@@ -67,7 +67,7 @@
                 {{#canaudit}}
                     <div class="actions">
                         <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="actions-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</button>
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="actions-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{#ishome}}Actions{{/ishome}}{{^ishome}}<i class="fa fa-ellipsis-v" aria-hidden="true"></i>{{/ishome}}</button>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="actions-dropdown">
                                 <a class="dropdown-item action-viewusers" href="#">Users</a>
                             </div>

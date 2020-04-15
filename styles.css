@@ -102,6 +102,9 @@
     float: left;
     margin-right: 10px;
 }
+.block_latest_local_announcements .rightwrap {
+    float: none;
+}
 .block_latest_local_announcements .home .rightwrap {
     float: right;
 }
@@ -120,12 +123,34 @@
     font-size: 13px;
     transition: opacity 0.5s ease;
     margin-left: 10px;
+
+    position: absolute;
+    right: 0px;
+    top: 0;
+}
+.block_latest_local_announcements .home .actions {
+    position: relative;
+}
+.block_latest_local_announcements .preloads-completed .actions {
+    display: inline-block;
 }
 .block_latest_local_announcements .actions .inline-list li {
     display: inline-block;
     margin-left: 8px;
 }
-.block_latest_local_announcements-content.home.preloads-completed .actions {
+.block_latest_local_announcements .dropdown-toggle {
+    display: none;
+}
+.block_latest_local_announcements .announcement:hover .dropdown-toggle {
+    display: block;
+}
+.block_latest_local_announcements .home .dropdown-toggle {
+    display: block;
+}
+.block_latest_local_announcements .dropdown-toggle::after {
+    display: none;
+}
+.block_latest_local_announcements .home .dropdown-toggle::after {
     display: inline-block;
 }
 .block_latest_local_announcements .clear {
@@ -179,7 +204,7 @@
     margin-bottom: 0;
 }
 .block_latest_local_announcements .attachments {
-    margin: 10px 15px;
+    margin: 10px 15px 0;
 }
 .block_latest_local_announcements .attachments .comma-list {
     display: block;

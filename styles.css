@@ -204,7 +204,7 @@
     margin-bottom: 0;
 }
 .block_latest_local_announcements .attachments {
-    margin: 10px 15px 0;
+    margin: 0px 15px 10px;
 }
 .block_latest_local_announcements .attachments .comma-list {
     display: block;

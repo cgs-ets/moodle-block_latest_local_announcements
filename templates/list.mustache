@@ -24,7 +24,7 @@
     Course Announcements block list template.
 }}
 
-<div class="block_latest_local_announcements-content" data-region="block_latest_local_announcements-instance-{{instanceid}}">
+<div class="block_latest_local_announcements-content{{#ishome}} home{{/ishome}}" data-region="block_latest_local_announcements-instance-{{instanceid}}">
     <div class="lann-header">
         <h3>{{#str}} title, block_latest_local_announcements {{/str}}</h3>
         {{#canaudit}}

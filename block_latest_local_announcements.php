@@ -195,6 +195,7 @@ class block_latest_local_announcements extends block_base {
             'viewmoretitle' => $viewmoretitle,
             'canaudit' => is_user_auditor(),
             'auditingon' => is_auditing_on(),
+            'ishome' => $ishome,
         );
 
         // Render the announcement list

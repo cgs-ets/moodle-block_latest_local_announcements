@@ -65,15 +65,22 @@
 }
 .block_latest_local_announcements .userphoto {
     float: left;
-    margin-right: 10px;
+    margin-right: 7px;
+    height: 25px;
+    width: 25px;
+    overflow: hidden;
 }
 .block_latest_local_announcements .userphoto img {
     border-radius: 50%;
+    height: 100%;
+    width: 100%;
+    border: 1px solid #aaa;
+    display: block;
 }
 .block_latest_local_announcements .note {
     font-style: italic;
     font-size: 13px;
-    padding: 10px 15px;
+    padding: 6px 15px 0;
 }
 .block_latest_local_announcements .header {
     position: relative;
@@ -81,15 +88,22 @@
     border-bottom: 1px solid #e4e6e8;
     padding: 10px 15px;
 }
+.block_latest_local_announcements .subject {
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 3px;
+}
 .block_latest_local_announcements .author {
     float: left;
-    padding-top: 6px;
-    font-weight: 600;
+    font-size: 14px;
+    line-height: 25px;
 }
-.block_latest_local_announcements .rightwrap {
-    position: absolute;
-    right: 15px;
-    top: 10px;
+.block_latest_local_announcements .leftwrap {
+    float: left;
+    margin-right: 10px;
+}
+.block_latest_local_announcements .home .rightwrap {
+    float: right;
 }
 .block_latest_local_announcements .meta {
     font-size: 13px;
@@ -98,22 +112,21 @@
     text-align: right;
     display: inline-block;
     float: left;
+    position: relative;
 }
 .block_latest_local_announcements .actions {
-    opacity: 0;
+    display: none;
     float: left;
     font-size: 13px;
     transition: opacity 0.5s ease;
-    display: inline-block;
     margin-left: 10px;
 }
 .block_latest_local_announcements .actions .inline-list li {
     display: inline-block;
     margin-left: 8px;
 }
-
-.block_latest_local_announcements-content.preloads-completed .actions {
-    opacity: 1;
+.block_latest_local_announcements-content.home.preloads-completed .actions {
+    display: inline-block;
 }
 .block_latest_local_announcements .clear {
     clear: both;
@@ -123,7 +136,6 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    float: right;
     padding-right: 1px;
 }
 .block_latest_local_announcements .audiences .tip {
@@ -158,15 +170,9 @@
 .block_latest_local_announcements .audiences:hover .tip {
     display: block;
 }
-.block_latest_local_announcements .subject {
-    font-weight: 600;
-    font-size: 16px;
-    padding: 6px 15px;
-    clear: both;
-}
 .block_latest_local_announcements .message {
     position: relative;
-    padding: 0 15px 10px;
+    padding: 10px 15px;
 
 }
 .block_latest_local_announcements .message p:last-of-type {

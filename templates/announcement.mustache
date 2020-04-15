@@ -26,8 +26,11 @@
 
 <div data-id="{{id}}" class="announcement{{^isavailable}} unavailable{{/isavailable}}{{#ismodpending}} modpending{{/ismodpending}}{{#ismodrejected}} modrejected{{/ismodrejected}}{{#islong}} long-message{{/islong}}">
     <div class="header">
-        <div class="userphoto"><a href="{{authorurl}}" title="{{authorfullname}} profile"><img src="{{authorphoto}}" alt="{{authorfullname}}" title="{{authorfullname}}" /></a></div>
-        <div class="author">{{authorfullname}}</div>
+        <div class="leftwrap">
+            <div class="subject">{{subject}}</div>
+            <div class="userphoto"><a href="{{authorurl}}" title="{{authorfullname}} profile"><img src="{{authorphoto}}" alt="{{authorfullname}}" title="{{authorfullname}}" /></a></div>
+            <div class="author">{{authorfullname}}</div>
+        </div>
         <div class="rightwrap">
 
             <div class="meta">
@@ -63,7 +66,12 @@
             {{^iscreator}}
                 {{#canaudit}}
                     <div class="actions">
-                        <a class="btn btn-secondary action-viewusers" href="#">View users</a>
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="actions-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</button>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="actions-dropdown">
+                                <a class="dropdown-item action-viewusers" href="#">Users</a>
+                            </div>
+                        </div>
                     </div>
                 {{/canaudit}}
             {{/iscreator}}
@@ -77,7 +85,6 @@
     {{#ismodpending}}<div class="note moderationstatus">{{#str}} list:announcementmodpending, local_announcements, {{#modinfo}}{{moduserfullname}}{{/modinfo}} {{/str}}</div>{{/ismodpending}}
     {{#ismodrejected}}<div class="note moderationstatus">{{#str}} list:announcementmodrejected, local_announcements, {{#modinfo}}{{actioneduserfullname}}{{/modinfo}} {{/str}}</div>{{/ismodrejected}}
 
-    <div class="subject">{{subject}}</div>
     <div class="message">
         {{{shortmessage}}}
     </div>

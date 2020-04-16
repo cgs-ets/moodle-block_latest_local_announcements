@@ -190,7 +190,7 @@ class block_latest_local_announcements extends block_base {
             'list' => $list->export($OUTPUT),
             'canpost' => can_user_post_announcement(),
             'instanceid' => $this->instance->id,
-            'addnewurl' => $addnewlink->out(),
+            'addnewurl' => $addnewlink->out(false),
             'viewmoreurl' => $viewmorelink->out(false),
             'viewmoretitle' => $viewmoretitle,
             'canaudit' => is_user_auditor(),

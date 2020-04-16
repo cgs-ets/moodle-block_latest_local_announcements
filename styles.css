@@ -63,6 +63,9 @@
     z-index: 2;
     position: relative;
 }
+.block_latest_local_announcements .fetching-full a.view-full-link {
+    display: none;
+}
 .block_latest_local_announcements .userphoto {
     float: left;
     margin-right: 7px;
@@ -123,7 +126,6 @@
     font-size: 13px;
     transition: opacity 0.5s ease;
     margin-left: 10px;
-
     position: absolute;
     right: 0px;
     top: 0;
@@ -183,7 +185,11 @@
 .block_latest_local_announcements .message {
     position: relative;
     padding: 10px 15px;
-
+    transition: all 0.5s ease;
+}
+.block_latest_local_announcements .fetching-full .message {
+    background-color: #f2f2f2;
+    color: #898989;
 }
 .block_latest_local_announcements .message p:last-of-type {
     margin-bottom: 0;
@@ -260,4 +266,19 @@
 }
 .block_latest_local_announcements .auditing-icon.loading .loader {
     display: block;
+}
+.block_latest_local_announcements .announcement .message .loader {
+    display: none;
+    float: none;
+    padding: 10px 0;
+}
+.block_latest_local_announcements .announcement.fetching-full .message .loader {
+    display: inline-block;
+}
+.block_latest_local_announcements .announcement .message .loader .circle {
+    width: 20px;
+    height: 20px;
+    border-top-color: #000;
+    border-left-color: #000;
+    margin: 0 auto;
 }

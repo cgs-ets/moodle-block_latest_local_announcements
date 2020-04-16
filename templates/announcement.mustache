@@ -54,11 +54,14 @@
             {{#iscreator}}
                 <div class="actions">
                     <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="actions-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{#ishome}}Actions{{/ishome}}{{^ishome}}<i class="fa fa-ellipsis-v" aria-hidden="true"></i>{{/ishome}}</button>
+                        <button class="btn{{#ishome}} btn-secondary{{/ishome}} actions-dropdown" type="button" id="actions-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></button>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="actions-dropdown">
-                            <a class="dropdown-item action-viewusers" href="#">Users</a>
-                            <a class="dropdown-item action-edit" href="{{config.wwwroot}}/local/announcements/post.php?edit={{id}}">Edit</a>
-                            <a class="dropdown-item action-delete" href="#">Delete</a>
+                            <a class="dropdown-item action-edit" href="{{config.wwwroot}}/local/announcements/post.php?edit={{id}}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item action-viewusers" href="#"><i class="fa fa-users" aria-hidden="true"></i> Recipients</a>
+                            <a class="dropdown-item action-popout" target="_blank" href="{{viewurl}}"><i class="fa fa-external-link" aria-hidden="true"></i> Pop out</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item action-delete" href="#"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</a>
                         </div>
                     </div>
                 </div>
@@ -67,9 +70,10 @@
                 {{#canaudit}}
                     <div class="actions">
                         <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="actions-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{#ishome}}Actions{{/ishome}}{{^ishome}}<i class="fa fa-ellipsis-v" aria-hidden="true"></i>{{/ishome}}</button>
+                            <button class="btn{{#ishome}} btn-secondary{{/ishome}} actions-dropdown" type="button" id="actions-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></button>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="actions-dropdown">
-                                <a class="dropdown-item action-viewusers" href="#">Users</a>
+                                <a class="dropdown-item action-viewusers" href="#"><i class="fa fa-users" aria-hidden="true"></i> Recipients</a>
+                                <a class="dropdown-item action-popout" target="_blank" href="{{viewurl}}"><i class="fa fa-external-link" aria-hidden="true"></i> Pop out</a>
                             </div>
                         </div>
                     </div>

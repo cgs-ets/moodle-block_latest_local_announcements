@@ -59,7 +59,7 @@
 .block_latest_local_announcements .announcement.modrejected .header {
     border-bottom: 1px solid #bcbcbc;
 }
-.block_latest_local_announcements a.view-more-link {
+.block_latest_local_announcements a.view-full-link {
     z-index: 2;
     position: relative;
 }
@@ -137,21 +137,6 @@
 .block_latest_local_announcements .actions .inline-list li {
     display: inline-block;
     margin-left: 8px;
-}
-.block_latest_local_announcements .dropdown-toggle {
-    display: none;
-}
-.block_latest_local_announcements .announcement:hover .dropdown-toggle {
-    display: block;
-}
-.block_latest_local_announcements .home .dropdown-toggle {
-    display: block;
-}
-.block_latest_local_announcements .dropdown-toggle::after {
-    display: none;
-}
-.block_latest_local_announcements .home .dropdown-toggle::after {
-    display: inline-block;
 }
 .block_latest_local_announcements .clear {
     clear: both;

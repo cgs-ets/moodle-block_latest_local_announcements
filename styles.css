@@ -187,6 +187,9 @@
     padding: 10px 15px;
     transition: all 0.5s ease;
 }
+.block_latest_local_announcements .message img {
+    max-width: 100%;
+}
 .block_latest_local_announcements .fetching-full .message {
     background-color: #f2f2f2;
     color: #898989;

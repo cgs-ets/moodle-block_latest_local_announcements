@@ -184,6 +184,7 @@
 }
 .block_latest_local_announcements .message {
     position: relative;
+    overflow: hidden;
     padding: 10px 15px;
     transition: all 0.5s ease;
 }

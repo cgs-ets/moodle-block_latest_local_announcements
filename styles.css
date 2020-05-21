@@ -109,7 +109,7 @@
 .block_latest_local_announcements .impersonatedby span {
     transition: opacity 0.6s ease;
     opacity: 0;
-    font-size: 13px;
+    font-size: 12px;
     color: #616161;
 }
 .block_latest_local_announcements .header:hover .impersonatedby {

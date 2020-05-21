@@ -30,8 +30,8 @@ defined('MOODLE_INTERNAL') || die();
 use local_announcements\persistents\announcement;
 use local_announcements\providers\audiences\audience_mdlcourse;
 use local_announcements\external\list_exporter;
-if (file_exists($CFG->dirroot . '/local/announcements/lib.php')) {
-  require_once($CFG->dirroot . '/local/announcements/lib.php');
+if (file_exists($CFG->dirroot . '/local/announcements/locallib.php')) {
+  require_once($CFG->dirroot . '/local/announcements/locallib.php');
 }
 
 define('DEFAULT_COURSE_ANN_DISPLAYNUM', 5);

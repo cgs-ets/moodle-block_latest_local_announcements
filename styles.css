@@ -67,6 +67,7 @@
     display: none;
 }
 .block_latest_local_announcements .userphoto {
+    position: relative;
     float: left;
     margin-right: 7px;
     height: 25px;

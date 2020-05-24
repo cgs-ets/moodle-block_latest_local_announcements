@@ -78,7 +78,7 @@
     border-radius: 50%;
     height: 100%;
     width: 100%;
-    border: 1px solid #aaa;
+    border: 0 none;
     display: block;
 }
 .block_latest_local_announcements .note {

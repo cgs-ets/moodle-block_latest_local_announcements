@@ -167,43 +167,55 @@
 .block_latest_local_announcements .clear {
     clear: both;
 }
-.block_latest_local_announcements .audiences {
-    max-width: 150px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    padding-right: 1px;
+.block_latest_local_announcements .audiences,
+.block_latest_local_announcements .delivery {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    text-align: center;
 }
-.block_latest_local_announcements .audiences .tip {
+.block_latest_local_announcements .delivery.forcepending i, 
+.block_latest_local_announcements .delivery.digestpending i {
+    color: orange;
+}
+.block_latest_local_announcements .delivery.forcemailed i, 
+.block_latest_local_announcements .delivery.digestmailed i {
+    color: green;
+}
+.block_latest_local_announcements .meta .tip {
     display: none;
     position: absolute;
     bottom: 23px;
     font-size: 12px;
     width: auto;
     max-width: 200px;
-    background-color: rgba(0,0,0,0.9);
+    background-color: rgba(0, 0, 0, 0.9);
     color: #fff;
-    border-radius: 9px;
+    border-radius: 5px;
     z-index: 1000;
     padding: 6px 6px 10px;
     line-height: 1.4;
     white-space: normal;
-    text-align: left;
+    text-align: center;
+    right: -5px;
+    min-width: 125px;
 }
-.block_latest_local_announcements .audiences .tip a {
+.block_latest_local_announcements .meta .tip a {
     color: #fff;
 }
-.block_latest_local_announcements .audiences .tip:after {
+.block_latest_local_announcements .meta .tip:after {
     content: " ";
     position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-left: -5px;
+    bottom: -10px;
+    left: 100%;
+    margin-left: -20px;
+    margin-top: 0;
     border-width: 5px;
     border-style: solid;
     border-color: black transparent transparent transparent;
+    top: auto;
 }
-.block_latest_local_announcements .audiences:hover .tip {
+.block_latest_local_announcements .meta .hastip:hover .tip {
     display: block;
 }
 .block_latest_local_announcements .message {

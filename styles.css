@@ -130,9 +130,6 @@
     margin-right: 10px;
 }
 .block_latest_local_announcements .rightwrap {
-    float: none;
-}
-.block_latest_local_announcements .home .rightwrap {
     float: right;
 }
 .block_latest_local_announcements .meta {

@@ -171,6 +171,10 @@
     width: 20px;
     text-align: center;
 }
+.block_latest_local_announcements .audiences i {
+    font-size: 12px;
+    color: #282828;
+}
 .block_latest_local_announcements .delivery.forcepending i, 
 .block_latest_local_announcements .delivery.digestpending i {
     color: orange;

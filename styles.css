@@ -125,6 +125,10 @@
     font-size: 14px;
     line-height: 25px;
 }
+.block_latest_local_announcements .author .jobpositions {
+    font-size: 12px;
+    line-height: 12px;
+}
 .block_latest_local_announcements .leftwrap {
     float: left;
     margin-right: 10px;

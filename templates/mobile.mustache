@@ -37,7 +37,7 @@
                     <div class="header">
                         <div class="leftwrap">
                             <div class="subject">{{subject}}</div>
-                            <div class="userphoto"><a href="{{authorurl}}" title="{{authorfullname}} profile"><img src="{{authorphototokenised}}" alt="{{authorfullname}}" title="{{authorfullname}}" /></a></div>
+                            <div class="userphoto"><a core-link capture="true" href="{{authorurl}}" title="{{authorfullname}} profile"><img src="{{authorphototokenised}}" alt="{{authorfullname}}" title="{{authorfullname}}" /></a></div>
                             <div class="author">
                                 {{authorfullname}}
                                 {{#authorjobpositions}}
@@ -55,7 +55,7 @@
                                     <div class="tip">
                                         <span class="comma-list">
                                             {{#audiences}}
-                                                {{#conditions}}<span>{{#url}}<a href="{{url}}">{{name}}</a>{{/url}}{{^url}}{{name}}{{/url}}</span>{{/conditions}}
+                                                {{#conditions}}<span>{{#url}}<a core-link capture="true" href="{{url}}">{{name}}</a>{{/url}}{{^url}}{{name}}{{/url}}</span>{{/conditions}}
                                             {{/audiences}}
                                         </span>
                                     </div>

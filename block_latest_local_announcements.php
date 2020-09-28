@@ -27,11 +27,9 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-use local_announcements\persistents\announcement;
-use local_announcements\providers\audiences\audience_mdlcourse;
-use local_announcements\external\list_exporter;
+require_once($CFG->dirroot . '/blocks/latest_local_announcements/lib.php');
 if (file_exists($CFG->dirroot . '/local/announcements/locallib.php')) {
-  require_once($CFG->dirroot . '/local/announcements/locallib.php');
+    require_once($CFG->dirroot . '/local/announcements/locallib.php');
 }
 
 define('DEFAULT_COURSE_ANN_DISPLAYNUM', 5);
@@ -87,7 +85,7 @@ class block_latest_local_announcements extends block_base {
      * @return object
      */
     public function get_content() {
-        global $PAGE, $COURSE, $USER, $OUTPUT, $DB, $CFG;
+        global $USER, $OUTPUT, $CFG;
 
         // If content has already been generated, don't waste time generating it again.
         if ($this->content !== null) {
@@ -111,92 +109,7 @@ class block_latest_local_announcements extends block_base {
             return $this->content;
         }
 
-        // Get the global config.
-        $globalconfig = get_config('block_latest_local_announcements');
-
-        // The context of announcements is always system.
-        $context = context_system::instance();
-
-        $ishome = ($PAGE->pagetype == 'site-index');
-
-        $displaynum = DEFAULT_COURSE_ANN_DISPLAYNUM;
-        if (!empty($this->config->displaynum)) {
-            $displaynum = $this->config->displaynum;
-        } else if (!empty($globalconfig->displaynum)) {
-            $displaynum = $globalconfig->displaynum;
-        }
-        
-        // Get the announcements, depending on audit mode and audiences.
-        if (is_auditing_on()) {
-            if ($ishome) {
-                $announcements = announcement::get_all(null, $displaynum);
-            } else {
-                $announcements = announcement::get_all_by_audience('mdlcourse', '', 
-                    $COURSE->idnumber, null, $displaynum);
-            }
-        } else {
-            if ($ishome) {
-                $announcements = announcement::get_by_username($USER->username, null, $displaynum);
-            } else {
-                if (can_view_all_in_context(context_course::instance($COURSE->id))) {
-                    $announcements = announcement::get_all_by_audience('mdlcourse', '', 
-                        $COURSE->idnumber, null, $displaynum);
-                } else {
-                    $announcements = announcement::get_by_username_and_audience($USER->username, 'mdlcourse', '', 
-                        $COURSE->idnumber, null, $displaynum);
-                }
-            }
-        }
-
-        $relateds = [
-            'context' => $context,
-            'announcements' => $announcements,
-            'page' => 0,
-        ];
-        $list = new list_exporter(null, $relateds);
-
-        // Need to determine the audience type of the course we are in (e.g. academic vs house) for links.
-        $audiencetype = '';
-        if (!$ishome) {
-            $audiencetype = \local_announcements\providers\audiences\audience_mdlcourse::get_audience_type($COURSE->id);
-        }
-
-        // Add new announcement link - based on context
-        $addnewlinkparams = [];
-        if (!$ishome) {
-            $addnewlinkparams = [
-                'type' => $audiencetype, 
-                'code' => $COURSE->idnumber, 
-            ];
-        }
-        $addnewlink = new \moodle_url('/local/announcements/post.php', $addnewlinkparams);
-
-        // View more link - based on context
-        $viewmoretitle = '';
-        $viewmorelinkparams = [];
-        if ($ishome) {
-            $viewmoretitle = get_string('viewallannouncements', 'block_latest_local_announcements');
-        } else {
-            $viewmoretitle = get_string('viewmorefromcourse', 'block_latest_local_announcements', $COURSE->shortname);
-            $viewmorelinkparams = [
-                'type' => $audiencetype, 
-                'code' => $COURSE->idnumber, 
-            ];
-        }
-        $viewmorelink = new \moodle_url('/local/announcements/index.php', $viewmorelinkparams);
-
-        // Contruct the data for rendering
-        $data = array(
-            'list' => $list->export($OUTPUT),
-            'canpost' => can_user_post_announcement(),
-            'instanceid' => $this->instance->id,
-            'addnewurl' => $addnewlink->out(false),
-            'viewmoreurl' => $viewmorelink->out(false),
-            'viewmoretitle' => $viewmoretitle,
-            'canaudit' => is_user_auditor(),
-            'auditingon' => is_auditing_on(),
-            'ishome' => $ishome,
-        );
+        $data = block_latest_local_announcements_init($this->instance->id);
 
         // Render the announcement list
         $this->content->text = $OUTPUT->render_from_template('block_latest_local_announcements/list', $data);

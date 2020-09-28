@@ -1,0 +1,281 @@
+.block_latest_local_announcements-content {
+    padding: 1rem;
+}
+.block_latest_local_announcements .lann-header h3 {
+    padding-right: 50px;
+}
+.block_latest_local_announcements #btn-newannouncement {
+    font-size: small;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+}
+.block_latest_local_announcements.block_with_controls #btn-newannouncement {
+    right: 80px;
+}
+.block_latest_local_announcements .lann-footer {
+    text-align: center;
+}
+.block_latest_local_announcements #btn-viewall {
+    font-size: small;
+}
+.block_latest_local_announcements .lann-list {
+    padding: 15px 0;
+}
+.block_latest_local_announcements .announcement {
+    background-color: #fff;
+    box-shadow: 1px 1px 2px 1px #e4e6e8;
+    box-shadow: 2px 2px 2px 0px #e4e6e8;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border-radius: 0px;
+    border: 1px solid #cdcdcd;
+    border: 1px solid #ddd;
+}
+.block_latest_local_announcements .announcement.unavailable,
+.block_latest_local_announcements .announcement.modpending {
+    background-color: #f8dec4;
+}
+.block_latest_local_announcements .announcement.modrejected {
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+.block_latest_local_announcements .announcement.unavailable .header,
+.block_latest_local_announcements .announcement.modpending .header,
+.block_latest_local_announcements .announcement.modrejected .header {
+    border-bottom: 1px solid #bcbcbc;
+}
+.block_latest_local_announcements a.view-full-link {
+    z-index: 2;
+    position: relative;
+}
+.block_latest_local_announcements .fetching-full a.view-full-link {
+    display: none;
+}
+.block_latest_local_announcements .userphoto {
+    position: relative;
+    float: left;
+    margin-right: 7px;
+    height: 25px;
+    width: 25px;
+    overflow: hidden;
+}
+.block_latest_local_announcements .userphoto img {
+    border-radius: 50%;
+    height: 100%;
+    width: 100%;
+    border: 0 none;
+    display: block;
+}
+.block_latest_local_announcements .note {
+    font-style: italic;
+    font-size: 13px;
+    padding: 6px 15px 0;
+}
+.block_latest_local_announcements .header {
+    position: relative;
+    width: 100%;
+    border-bottom: 1px solid #e4e6e8;
+    padding: 10px 15px;
+}
+.block_latest_local_announcements .subject {
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 3px;
+}
+.block_latest_local_announcements .impersonatedby {
+    margin: 5px 0 0 6px;
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+    transition: margin 0.3s ease;
+}
+.block_latest_local_announcements .impersonatedby span {
+    transition: opacity 0.6s ease;
+    opacity: 0;
+    font-size: 12px;
+    color: #616161;
+}
+.block_latest_local_announcements .header:hover .impersonatedby {
+    z-index: 1;
+    margin: 14px 0 0 12px;
+    opacity: 1;
+}
+.block_latest_local_announcements .header:hover .impersonatedby span {
+    opacity: 1;
+}
+.block_latest_local_announcements .author {
+    float: left;
+    font-size: 14px;
+    line-height: 25px;
+}
+.block_latest_local_announcements .author .jobpositions {
+    font-size: 12px;
+    line-height: 12px;
+}
+.block_latest_local_announcements .leftwrap {
+    float: left;
+    margin-right: 10px;
+}
+.block_latest_local_announcements .rightwrap {
+    float: right;
+}
+.block_latest_local_announcements .meta {
+    font-size: 13px;
+    color: #000;
+    font-style: normal;
+    text-align: right;
+    display: inline-block;
+    float: left;
+    position: relative;
+}
+.block_latest_local_announcements .clear {
+    clear: both;
+}
+.block_latest_local_announcements .audiences,
+.block_latest_local_announcements .delivery {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    text-align: center;
+}
+.block_latest_local_announcements .audiences i {
+    font-size: 12px;
+    color: #282828;
+}
+.block_latest_local_announcements .delivery.forcepending i,
+.block_latest_local_announcements .delivery.forcesending i,
+.block_latest_local_announcements .delivery.digestpending i,
+.block_latest_local_announcements .delivery.digestsending i {
+  color: orange;
+}
+.block_latest_local_announcements .delivery.forcemailed i, 
+.block_latest_local_announcements .delivery.digestmailed i {
+    color: green;
+}
+.block_latest_local_announcements .delivery.forcesending i {
+    -webkit-animation: spin 1s linear 0s infinite;
+    -moz-animation: spin 1s linear 0s infinite;
+    -o-animation: spin 1s linear 0s infinite;
+    animation: spin 1s linear 0s infinite;
+}
+.block_latest_local_announcements .delivery.forcesending i:after {
+    content: "";
+    background: white;
+    height: 2px;
+    width: 3px;
+    display: block;
+    position: absolute;
+    top: 7px;
+}
+.block_latest_local_announcements .delivery.digestsending i {
+  -webkit-animation: spin 1s linear 0s infinite;
+  -moz-animation: spin 1s linear 0s infinite;
+  -o-animation: spin 1s linear 0s infinite;
+  animation: spin 1s linear 0s infinite;
+}
+.block_latest_local_announcements .meta .tip {
+    display: none;
+    position: absolute;
+    bottom: 23px;
+    font-size: 12px;
+    width: auto;
+    max-width: 200px;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #fff;
+    border-radius: 5px;
+    z-index: 1000;
+    padding: 6px 6px 10px;
+    line-height: 1.4;
+    white-space: normal;
+    text-align: center;
+    right: -5px;
+    min-width: 125px;
+}
+.block_latest_local_announcements .meta .tip a {
+    color: #fff;
+}
+.block_latest_local_announcements .meta .tip:after {
+    content: " ";
+    position: absolute;
+    bottom: -10px;
+    left: 100%;
+    margin-left: -20px;
+    margin-top: 0;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+    top: auto;
+}
+.block_latest_local_announcements .meta .hastip:hover .tip {
+    display: block;
+}
+.block_latest_local_announcements .message {
+    position: relative;
+    overflow: hidden;
+    padding: 10px 15px;
+    transition: all 0.5s ease;
+}
+.block_latest_local_announcements .message img {
+    max-width: 100%;
+}
+.block_latest_local_announcements .fetching-full .message {
+    background-color: #f2f2f2;
+    color: #898989;
+}
+.block_latest_local_announcements .message p:last-of-type {
+    margin-bottom: 0;
+}
+.block_latest_local_announcements .attachments {
+    margin: 0px 15px 10px;
+}
+.block_latest_local_announcements .attachments .comma-list {
+    display: block;
+}
+.block_latest_local_announcements .attachments .comma-list li {
+    display: inline-block;
+}
+.block_latest_local_announcements .announcement .modcomment {
+    margin: 0px 15px 10px;
+}
+.block_latest_local_announcements .auditing-icon {
+    color: #000;
+    text-align: center;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    right: 80px;
+    top: 20px;
+}
+.block_latest_local_announcements .auditing-icon.auditing-is-on {
+    background-color: rgba(204, 169, 44, 0.4);
+}
+.block_latest_local_announcements .auditing-icon .tip {
+    display: none;
+    position: absolute;
+    bottom: 36px;
+    font-size: 12px;
+    width: 187px;
+    margin-left: -81px;
+    background-color: rgba(0,0,0,0.9);
+    color: #fff;
+    border-radius: 9px;
+    z-index: 1000;
+    padding: 6px 6px 10px;
+    line-height: 1.4;
+}
+.block_latest_local_announcements .auditing-icon:hover .tip {
+    display: block;
+}
+.block_latest_local_announcements .tip::after {
+    content: " ";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+}

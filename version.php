@@ -26,7 +26,7 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version = 2020041500;
+$plugin->version = 2020041501;
 $plugin->requires = 2010121000;
 $plugin->component = 'block_latest_local_announcements';
 $plugin->maturity = MATURITY_BETA;

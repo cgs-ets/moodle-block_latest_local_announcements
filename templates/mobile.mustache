@@ -1,0 +1,91 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+
+    @package   block_latest_local_announcements
+    @copyright 2020 Michael Vangelovski <michael.vangelovski@hotmail.com>
+    @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+}}
+{{!
+    @template block_latest_local_announcements/mobile
+
+    Template for mobile app.
+}}
+<div class="block_latest_local_announcements-content{{#ishome}} home{{/ishome}}" data-region="block_latest_local_announcements-instance-{{instanceid}}">
+    <div class="lann-header">
+        <h3>{{#str}} title, block_latest_local_announcements {{/str}}</h3>
+        {{#canpost}}
+        <a ion-button id="btn-newannouncement" href="{{addnewurl}}">{{# str }} addanewannouncement, block_latest_local_announcements {{/ str }}</a>
+        {{/canpost}}
+    </div>
+    <div class="lann-list">
+        {{#list}}
+            {{#announcements}}
+                <div data-id="{{id}}" class="announcement{{^isavailable}} unavailable{{/isavailable}}{{#ismodpending}} modpending{{/ismodpending}}{{#ismodrejected}} modrejected{{/ismodrejected}}{{#islong}} long-message{{/islong}}">
+                    <div class="header">
+                        <div class="leftwrap">
+                            <div class="subject">{{subject}}</div>
+                            <div class="userphoto"><a href="{{authorurl}}" title="{{authorfullname}} profile"><img src="{{authorphototokenised}}" alt="{{authorfullname}}" title="{{authorfullname}}" /></a></div>
+                            <div class="author">
+                                {{authorfullname}}
+                                {{#authorjobpositions}}
+                                    <div class="jobpositions">
+                                        {{authorjobpositions}}
+                                    </div>
+                                {{/authorjobpositions}}
+                            </div>
+                        </div>
+                        <div class="rightwrap">
+                            <div class="meta">
+                                <div class="time">{{readabletime}}</div>
+                                <div class="audiences hastip">
+                                    <i class="fa fa-users" aria-hidden="true"></i>
+                                    <div class="tip">
+                                        <span class="comma-list">
+                                            {{#audiences}}
+                                                {{#conditions}}<span>{{#url}}<a href="{{url}}">{{name}}</a>{{/url}}{{^url}}{{name}}{{/url}}</span>{{/conditions}}
+                                            {{/audiences}}
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    {{^isavailable}}<div class="note availability">{{#str}} list:announcementunavailable, local_announcements {{/str}}</div>{{/isavailable}}
+                    {{#ismodpending}}<div class="note moderationstatus">{{#str}} list:announcementmodpending, local_announcements, {{#modinfo}}{{moduserfullname}}{{/modinfo}} {{/str}}</div>{{/ismodpending}}
+                    {{#ismodrejected}}<div class="note moderationstatus">{{#str}} list:announcementmodrejected, local_announcements, {{#modinfo}}{{actioneduserfullname}}{{/modinfo}} {{/str}}</div>{{/ismodrejected}}
+                    <div class="message">
+                        {{{messagemobile}}}
+                    </div>
+                    {{#attachmentstokenized.0}}
+                        <div class="attachments">
+                            Attachments:
+                            <ul class="comma-list">
+                            {{#attachmentstokenized}}
+                                <li><a target="_blank" href="{{path}}">{{{iconimage}}} {{filename}}</a></li>
+                            {{/attachmentstokenized}}
+                            </ul>
+                        </div>
+                    {{/attachmentstokenized.0}}
+                </div>
+            {{/announcements}}
+            {{^announcements.0}}{{#str}} list:noannouncements, local_announcements {{/str}}{{/announcements.0}}
+        {{/list}}
+    </div>
+    <div class="lann-footer">
+        <a ion-button id="btn-viewall" href="{{viewmoreurl}}">{{viewmoretitle}}</a>
+    </div>
+</div>

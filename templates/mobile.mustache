@@ -27,7 +27,7 @@
     <div class="lann-header">
         <h3>{{#str}} title, block_latest_local_announcements {{/str}}</h3>
         {{#canpost}}
-        <a ion-button id="btn-newannouncement" href="{{addnewurl}}">{{# str }} addanewannouncement, block_latest_local_announcements {{/ str }}</a>
+        <a core-link ion-button inApp="false" id="btn-newannouncement" href="{{addnewurl}}">{{# str }} addanewannouncement, block_latest_local_announcements {{/ str }}</a>
         {{/canpost}}
     </div>
     <div class="lann-list">
@@ -86,6 +86,6 @@
         {{/list}}
     </div>
     <div class="lann-footer">
-        <a ion-button id="btn-viewall" href="{{viewmoreurl}}">{{viewmoretitle}}</a>
+        <a core-link ion-button inApp="false" id="btn-viewall" href="{{viewmoreurl}}">{{viewmoretitle}}</a>
     </div>
 </div>

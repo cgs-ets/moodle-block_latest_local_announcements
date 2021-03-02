@@ -279,3 +279,12 @@
     border-style: solid;
     border-color: black transparent transparent transparent;
 }
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+    .block_latest_local_announcements .announcement {
+        background-color: transparent;
+    }
+    .block_latest_local_announcements .meta {
+        color: #fff;
+    }
+}

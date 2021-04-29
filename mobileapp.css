@@ -233,6 +233,7 @@
 }
 .block_latest_local_announcements .attachments .comma-list {
     display: block;
+    margin: 0;
 }
 .block_latest_local_announcements .attachments .comma-list li {
     display: inline-block;

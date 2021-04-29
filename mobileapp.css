@@ -229,7 +229,7 @@
     margin-bottom: 0;
 }
 .block_latest_local_announcements .attachments {
-    margin: 0px 15px 10px 0px;
+    margin: 0px 15px 10px;
 }
 .block_latest_local_announcements .tip::after {
     content: " ";

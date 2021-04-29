@@ -229,47 +229,7 @@
     margin-bottom: 0;
 }
 .block_latest_local_announcements .attachments {
-    margin: 0px 15px 10px;
-}
-.block_latest_local_announcements .attachments .comma-list {
-    display: block;
-    margin: 0;
-    padding: 0;
-}
-.block_latest_local_announcements .attachments .comma-list li {
-    display: inline-block;
-}
-.block_latest_local_announcements .announcement .modcomment {
-    margin: 0px 15px 10px;
-}
-.block_latest_local_announcements .auditing-icon {
-    color: #000;
-    text-align: center;
-    width: 25px;
-    height: 25px;
-    position: absolute;
-    right: 80px;
-    top: 20px;
-}
-.block_latest_local_announcements .auditing-icon.auditing-is-on {
-    background-color: rgba(204, 169, 44, 0.4);
-}
-.block_latest_local_announcements .auditing-icon .tip {
-    display: none;
-    position: absolute;
-    bottom: 36px;
-    font-size: 12px;
-    width: 187px;
-    margin-left: -81px;
-    background-color: rgba(0,0,0,0.9);
-    color: #fff;
-    border-radius: 9px;
-    z-index: 1000;
-    padding: 6px 6px 10px;
-    line-height: 1.4;
-}
-.block_latest_local_announcements .auditing-icon:hover .tip {
-    display: block;
+    margin: 0px 15px 10px 0px;
 }
 .block_latest_local_announcements .tip::after {
     content: " ";

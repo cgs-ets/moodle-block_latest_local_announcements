@@ -73,11 +73,9 @@
                     {{#attachmentstokenized.0}}
                         <div class="attachments">
                             Attachments:
-                            <ul class="comma-list">
                             {{#attachmentstokenized}}
-                                <li><a core-link ion-button inApp="false" href="{{path}}">{{{iconimage}}} {{filename}}</a></li>
+                                <p><a core-link inApp="false" href="{{path}}">{{{iconimage}}} {{filename}}</a></p>
                             {{/attachmentstokenized}}
-                            </ul>
                         </div>
                     {{/attachmentstokenized.0}}
                 </div>

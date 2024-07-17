@@ -32,6 +32,8 @@ if (file_exists($CFG->dirroot . '/local/announcements/locallib.php')) {
     require_once($CFG->dirroot . '/local/announcements/locallib.php');
 }
 
+define('DEFAULT_COURSE_ANN_DISPLAYNUM', 5);
+
 /**
  * Initial announcements block data
  *
